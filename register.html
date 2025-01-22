@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Page</title>
+</head>
+<body>
+<h2>Registration Page</h2>
+<form action="/register" method="post" enctype="multipart/form-data">
+<label for="username">Username:</label>
+<input type="text" id="username" name="username" required><br><br>
+<label for="password">Password:</label>
+<input type="password" id="password" name="password" required><br><br>
+<label for="gender">Gender:</label>
+<input type="radio" id="male" name="gender" value="male" required>
+<label for="male">Male</label>
+<input type="radio" id="female" name="gender" value="female" required>
+<label for="female">Female</label><br><br>
+<label for="hobbies">Hobbies:</label><br>
+<input type="checkbox" id="sports" name="hobbies" value="sports">
+<label for="sports">Sports</label><br>
+<input type="checkbox" id="music" name="hobbies" value="music">
+<label for="music">Music</label><br>
+<input type="checkbox" id="reading" name="hobbies" value="reading">
+<label for="reading">Reading</label><br><br>
+22CS450 – WEB PROGRAMMING LABPg. No - 3
+<label for="profile-picture">Profile Picture:</label>
+<input type="file" id="profile-picture" name="profile-picture" required><br><br>
+<label for="address">Address:</label><br>
+<textarea id="address" name="address" rows="4" cols="50" required></textarea><br><br>
+<label for="country">Country:</label>
+<select id="country" name="country" required>
+<option value="india">India</option>
+<option value="usa">USA</option>
+<option value="uk">UK</option>
+<option value="canada">Canada</option>
+</select><br><br>
+<button type="submit">Register</button>
+<button type="reset">Reset</button>
+<!-- <label for="">Profile Picture:</label>
+<input type="file" required><br><br>
+<label for="">Address:</label><br>
+<textarea name="" id="" rows="4" cols="50" required></textarea><br><br>
+<label for="">Country: </label>
+I <select name="" id="" required>
+<option value="">India</option>
+<option value="">USA</option>
+<option value="">UK</option>
+<option value="">Canada</option>
+</select><br><br>
+<button type="submit">Register</button>
+22CS450 – WEB PROGRAMMING LABPg. No - 4
+<button type="reset">Reset</button> -->
+</form>
+</body>
+</html>
