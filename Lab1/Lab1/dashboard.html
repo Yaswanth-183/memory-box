@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h2>Welcome to Your Memory Box</h2>
+    
+    <script>
+        // Retrieve the username from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const username = urlParams.get('username');
+
+        if (username) {
+            document.write("<h3>Hello, " + username + "!</h3>");
+        } else {
+            document.write("<h3>Hello, Guest!</h3>");
+        }
+    </script>
+
+<nav>
+    <a href="add_memory.html">Add Memory</a> |
+    <a href="view_memory.html">View Memories</a> |
+    <a href="search_memory.html">Search Memories</a> |
+    <a href="profile.html">Profile</a> |
+    <a href="settings.html">Settings</a> |
+    <a href="about.html">About</a> |
+    <a href="contact.html">Contact</a> |
+    <a href="logout.html">Logout</a>
+</nav>
+</body>
+</html>
