@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Memory</title>
+</head>
+<body>
+    <h2>Edit Memory</h2>
+    <form action="view_memory.html" method="post">
+        <label for="title">Memory Title:</label>
+        <input type="text" id="title" name="title" value="Old Memory Title" required><br><br>
+
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description" rows="4" cols="50">Old memory description...</textarea><br><br>
+
+        <button type="submit">Update Memory</button>
+    </form>
+
+    <a href="view_memory.html">Cancel</a>
+</body>
+</html>
