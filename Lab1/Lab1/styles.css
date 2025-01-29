@@ -6,17 +6,26 @@ body{
      background-size: cover;
      font-family:'Poppins', sans-serif;
     }
+.form-group{
+     text-rendering: optimizeSpeed;
+    }
 label {
-     font-size: 16px;
+     font-size: 20px;
      margin-bottom: 5px;
  }
- 
+ button{
+     text-decoration: wavy;
+ }
+ button{
+     
+     align-items: center;
+ }
 header{
      background-color: #3b8acf;
      color: white;
-     padding: 20px;
+     padding: 1px;
      text-align: center;
-     background-size: contain;
+     background-size: cover;
  }
  footer{
      background-color: blanchedalmond;
