@@ -1,0 +1,27 @@
+body{
+    text-align: center;
+    background-color: #87CEEB;
+}
+
+form{
+    border: 1px;
+    width: 320px;
+    border-radius: 10px;
+    background-color:rgb(255, 255, 255);
+    padding: 10px ;
+    margin: auto auto;
+    color: rgb(0, 0, 0);
+}
+
+a{
+    color:cadetblue;
+    text-decoration: none;
+}
+
+.submit{
+    background-color: blue;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    color:darkgrey;
+}
