@@ -5,6 +5,7 @@ body{
      /*background-color: rgba(0, 0, 255, 0.3); */
      background-size: cover;
      font-family:'Poppins', sans-serif;
+     text-align: center;
     }
 .form-group{
      text-rendering: optimizeSpeed;
@@ -26,6 +27,10 @@ header{
      padding: 1px;
      text-align: center;
      background-size: cover;
+     
+ }
+ ul{
+   list-style: none;
  }
  footer{
      background-color: blanchedalmond;
