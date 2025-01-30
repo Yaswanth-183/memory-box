@@ -3,14 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>User Profile</h2>
-    <p><strong>Username:</strong> JohnDoe</p>
-    <p><strong>Email:</strong> johndoe@example.com</p>
+    <div class="hero">
+    <nav>
+        <img src="logo.jpg" alt=""  class="logo">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <img src="https://i.pinimg.com/736x/3a/0b/70/3a0b7055d985be2f0bf9092692127cd0.jpg" alt=""  class="user-pic" onclick="toggleMenu()">
 
-    <a href="settings.html">Edit Profile</a> |
-    <a href="dashboard.html">Back to Dashboard</a>
+        <div class="sub-menu-wrap" id="subMenu">
+            <div class="sub-menu">
+                <div class="user-info">
+                    <img src="https://i.pinimg.com/736x/3a/0b/70/3a0b7055d985be2f0bf9092692127cd0.jpg" alt="" >
+                    <h3>Vijay</h3>
+                </div>
+                <hr>
+                <a href="#" class="sub-menu-link">
+                    <img src="https://www.citypng.com/public/uploads/preview/profile-user-round-red-icon-symbol-download-png-701751695033506d9qbpfbhgk.png?v=2024122606" alt="" width="50px">
+                    <p>Edit Profile</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <img src="https://www.svgimages.com/svg-image/s3/setting-icon-256x256.png" alt="" width="50px">
+                    <p>Settings & Privacy</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <img src="https://w7.pngwing.com/pngs/790/966/png-transparent-computer-icons-help-other-text-number-desktop-wallpaper-thumbnail.png" alt="" width="50px">
+                    <p>Help & Support</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <img src="https://cdn1.iconfinder.com/data/icons/heroicons-ui/24/logout-512.png" alt="" width="50px">
+                    <p>Logout</p>
+                    <span>></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+</div>
+<script>
+    let subMenu = document.getElementById("subMenu");
+    function toggleMenu(){
+        subMenu.classList.toggle("open-menu");
+    }
+</script>
 </body>
 </html>
