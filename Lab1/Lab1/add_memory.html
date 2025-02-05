@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Memory</title>
     <link rel="stylesheet" href="styles.css">
-    <meta http-equiv="refresh" content="5">
+    <meta http-equiv="refresh" content="60">
 </head>
 <body onload="welcome()">
 
@@ -26,12 +26,12 @@
         <form action="view_memory.html" method="post" >
             <div class="form-group">
                 <label for="title">Memory Title:</label>
-                <input type="text" id="title" name="title" placeholder="Enter a title" required>
+                <input type="text" id="title" name="title" placeholder="Enter a title" onkeydown="typing()">
             </div>
 <br>
             <div class="form-group full-width">
                 <label for="description">Description:</label>
-                <textarea id="description" name="description" placeholder="Enter about your title/memory" required></textarea>
+                <textarea id="description" name="description" placeholder="Enter about your title/memory" onkeydown=""></textarea>
             </div>
 <br>
             <div class="form-group">
@@ -72,6 +72,9 @@
     document.getElementById("title").addEventListener("mouseup",function(){
         this.style.backgroundColor="";
     });
+    document.getElementById("description").addEventListener("keyup", function(event) {
+            console.log("Key Pressed:", event.key); 
+        });
     document.getElementById("description").addEventListener("keydown", function(event) {
             console.log("Key Pressed:", event.key); 
         });
