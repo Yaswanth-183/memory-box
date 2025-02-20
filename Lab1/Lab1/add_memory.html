@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memory Box</title>
+    <title>Add Memory - Memory Box</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
-<body onload="display()">
+<body>
 
     <header>
-        <h1>Memory Box</h1>
+        <h1>Memory Box - Add Memory</h1>
         <nav>
             <ul>
                 <li><a href="dashboard.html">Dashboard</a></li>
@@ -20,71 +21,89 @@
     </header>
 
     <h2>Add a New Memory</h2>
-    
+
     <div>
-        <form action="view_memory.html" method="post" enctype="multipart/form-data">
+        <form id="memoryForm">
             <label for="title">Memory Title:</label>
-            <input type="text" id="title" placeholder="Enter a title" required 
-                onkeyup="logKey(event)" onkeydown="keyDown(event)"
-                onmousedown="mouseDown()" onmouseup="mouseUp()">
-                <br>
-                <br>
-            
-            <label for="description">Description:</label>
-            <textarea id="description" placeholder="Enter about your title/Memory" required></textarea>
-            <br>
-            <br>
-            <label for="date">Date:</label>
-            <input type="date" id="date" required onchange="dateSelected()">
+            <input type="text" id="title" placeholder="Enter memory title" required>
             <br><br>
-            <label for="file">Upload your file</label>
+
+            <label for="description">Description:</label>
+            <textarea id="description" placeholder="Describe your memory" required></textarea>
+            <br><br>
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" required>
+            <br><br>
+
+            <label for="file">Upload File:</label>
             <input type="file" id="file" accept="image/*,video/*">
             <br><br>
-            <button type="button" onclick="saveMemory()">Save Memory</button>
-            <button type="button" ondblclick="doubleClick()">Double Click Me</button>
-            <br><br><br><br><br><br><br><br><br><br><br><br>
+
+            <button type="button" id="saveMemoryBtn">Save Memory</button>
+            <button type="reset" id="resetBtn">Reset</button>
         </form>
     </div>
+
+    <div id="message"></div>
 
     <footer>
         <p>&copy; 2024 Memory Box. All rights reserved.</p>
     </footer>
 
     <script>
-        function display(){
-            alert("Welcome.Add your memories")
-        }
-        function saveMemory() {
-            alert("Memory Saved Successfully!");
-        }
+        $(document).ready(function () {
+            // Show welcome alert
+            alert("Welcome! Add your memory.");
 
-        function doubleClick() {
-            alert("You double-clicked the button!");
-        }
+            // Keyup event for title input
+            $("#title").keyup(function () {
+                console.log("Typing in title: " + $(this).val());
+            });
 
-        function logKey(event) {
-            console.log("User is typing: " + event.key);
-        }
+            // Focus event when user clicks on description
+            $("#description").focus(function () {
+                $(this).css("background-color", "#e0f7fa"); // Light blue
+            });
 
-        function keyDown(event) {
-            console.log("A key was pressed in the title input.");
-        }
+            // Blur event when user clicks outside description
+            $("#description").blur(function () {
+                $(this).css("background-color", ""); // Reset color
+            });
 
-        function mouseDown() {
-            console.log("Mouse button is pressed on the title field.");
-        }
+            // Change event when selecting a date
+            $("#date").change(function () {
+                alert("You selected the date: " + $(this).val());
+            });
 
-        function mouseUp() {
-            console.log("Mouse button is released on the title field.");
-        }
+            // Change event when selecting a file
+            $("#file").change(function () {
+                if (this.files.length > 0) {
+                    alert("File selected: " + this.files[0].name);
+                }
+            });
 
-        function dateSelected() {
-            let date = document.getElementById("date").value;
-            alert("You selected the date: " + date);
-        }
-        function
-        document.getElementById("file").addEventListener("change", function () {
-            alert("You selected the file: " + this.files[0].name);
+            // Click event for save button (Now with no AJAX)
+            $("#saveMemoryBtn").on("click", function () {
+                let title = $("#title").val();
+                let description = $("#description").val();
+                let date = $("#date").val();
+                let file = $("#file")[0].files.length > 0 ? $("#file")[0].files[0].name : "";
+
+                if (!title || !description || !date || !file) {
+                    alert("Please fill all fields and upload a file!");
+                    return;
+                }
+
+                // Simulated successful memory save
+                $("#message").html("<p style='color:green;'>Memory Saved Successfully!</p>");
+            });
+
+            // Click event for reset button
+            $("#resetBtn").click(function () {
+                $("#message").html(""); // Clear message
+                alert("Form Reset!");
+            });
         });
     </script>
 
