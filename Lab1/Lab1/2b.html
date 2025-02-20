@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memory Vault</title>
-    <link rel="stylesheet" href="2bstyle.css">
+    <title>Memory Box</title>
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="container">
-        <h2>Memory Vault</h2>
-        <input type="text" id="memoryKey" placeholder="Memory Title">
-        <input type="text" id="memoryValue" placeholder="Memory Details">
-        <button id="addMemoryBtn">Add Memory</button>
-        <button id="showCountBtn">Show Memory Count</button>
-        <button id="clearMemoryBtn">Delete Memory</button>
-        <h3>Stored Memories</h3>
-        <ul id="memoryList"></ul>
-    </div>
+    <h1>Memory Box</h1>
 
-    <script src="script.js"></script>
+    <input type="text" id="memoryKey" placeholder="Memory Title">
+    <input type="text" id="memoryValue" placeholder="Memory Details">
+    <button onclick="addMemory()">Add Memory</button>
+    <button onclick="showMemoryCount()">Show Memory Count</button>
+    <button onclick="removeMemory()">Remove Memory</button>
+
+    <h3>Stored Memories:</h3>
+    <ul id="memoryList"></ul>
+
+    <p id="output"></p>
 </body>
 </html>
